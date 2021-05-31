@@ -2,7 +2,7 @@ require('dotenv').config();
 
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 
-const getProvider = (network, mnemonic) => new HDWalletProvider(mnemonic, `https://${network}.infura.io/v3/${process.env.INFURA_PROJECT_ID}`);
+const getProvider = (network, mnemonic) => new HDWalletProvider(process.env.CONTRACT_OWNER_MNEMOMNIC_MAINNET, `https://https://dai.poa.network`);
 
 module.exports = {
   networks: {
@@ -21,7 +21,7 @@ module.exports = {
     },
     mainnet: {
       provider: () => getProvider('mainnet', process.env.CONTRACT_OWNER_MNEMOMNIC_MAINNET),
-      networkId: 1,
+      networkId: 100,
       gas: 5000000,
       gasPrice: 10e9, // 10 gwei
     }
